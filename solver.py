@@ -12,7 +12,7 @@ def mult(a,b):
     return a*b
 
 def divide(a,b):
-    return a//b
+    return a/b
 
 oppositeDict = {
     "+": subtract,
@@ -44,9 +44,19 @@ def makeListNums(arr):
         arr[i] = int(arr[i])
 
 def breakDownEquation(equation):
+    equate = None
+    result = None
     brokenList = equation.split("=")
-    brokenDict = regexIt(brokenList[0])
-    brokenDict["answer"] = int(brokenList[1])
+
+    if len(brokenList[0]) > len(brokenList[1]):
+        equate = 0
+        result = 1
+    else:
+        result = 0
+        equate = 1
+
+    brokenDict = regexIt(brokenList[equate])
+    brokenDict["answer"] = int(brokenList[result])
     
     makeListNums(brokenDict["numbers"])
     
