@@ -67,4 +67,4 @@ def solveEquation(equation):
 
     return oppositeDict[obj["signs"][0]](obj["answer"], obj["numbers"][0])
 
-print(solveEquation(equation))
+print(solveEquation(equation)) 
